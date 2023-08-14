@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // Components
-import {HeadlinesComponent} from './components';
+import {HeadlinesComponent, Searchbar} from './components';
 
 // Configs
 import { END_POINT } from './config';
@@ -18,9 +18,13 @@ function fetchNews(url, setResponse, setError) {
   })
 }
 
+function searchFunction (category, setResponse, setError) {
+  const url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+  fetchNews(url, setResponse, setError);
+}
+
 
 const App = () => {
-
 
   const [topHeadlines, setTopHeadlines] = useState({
     articles: [],
@@ -28,14 +32,11 @@ const App = () => {
     status: 'unfetched'
   })
   const [error, setError] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     fetchNews(END_POINT, setTopHeadlines, setError);
   }, []);
-
-  useEffect(() => {
-    console.log(topHeadlines);
-  }, [topHeadlines]);
 
   return (
     <div 
@@ -57,10 +58,14 @@ const App = () => {
         width: '80%',
       }}>NewsBreeze is a comprehensive and user-friendly news application that keeps you updated with the latest news from around the world. With a sleek design and intuitive interface, NewsBreeze provides a seamless news consumption experience for users of all ages.</p>
     
+      <Searchbar value={searchValue} setValue={setSearchValue} onClick={() => {
+        searchFunction(searchValue, setTopHeadlines, setError);
+      }}/>
+
       <div style={{
-        margin: '10px 0px'
+        margin: '20px 0px'
       }}>
-        <HeadlinesComponent error={error} data={topHeadlines}/>
+        <HeadlinesComponent error={error} data={topHeadlines}  title={searchValue}/>
       </div>
     </div>
   );

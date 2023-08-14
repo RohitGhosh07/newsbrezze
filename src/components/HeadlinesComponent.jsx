@@ -1,12 +1,16 @@
 // Components
 import { NewsCard } from "../components";
 
-const HeadlinesComponent = ({error, data}) => {
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const HeadlinesComponent = ({error, data, title = ""}) => {
   return (
     <div style={{
       marginTop: '20px'
     }}>
-        <h2>Top Headlines</h2>
+        <h2>Top {capitalizeFirstLetter(title)} Headlines</h2>
 
         <div style={{
           marginTop: '15px',
