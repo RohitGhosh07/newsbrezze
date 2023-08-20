@@ -1,0 +1,19 @@
+#loader-container{
+    margin: 'auto'
+}
+
+#loader{
+    border: 4px solid gray;
+    border-left-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

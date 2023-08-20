@@ -9,7 +9,8 @@ const Searchbar = ({value, setValue = () => {}, placeholder = "Enter your catego
         border: '2px solid black',
         width: '50%',
         boxShadow: '5px 5px gray',
-        margin: 'auto'
+        margin: 'auto',
+        background:'#c0c0c0'
 
     }}>
         <input 
