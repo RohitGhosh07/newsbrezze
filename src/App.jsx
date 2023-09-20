@@ -22,7 +22,7 @@ function fetchNews(url, setResponse, setError, setLoading = () => {}) {
 }
 
 function searchFunction(category, setResponse, setError, setLoading = () => {}) {
-  const url = `https://newsapi.org/v2/everything?q=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+  const url = `https://newsapi.in/v2/everything?q=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
   fetchNews(url, setResponse, setError, setLoading);
 }
 
