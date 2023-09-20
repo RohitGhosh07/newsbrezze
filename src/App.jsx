@@ -58,11 +58,7 @@ const App = () => {
         fontSize: '4em',
         textAlign: 'center'
       }}>NewsBreeze</h1>
-      <p style={{
-        textAlign: 'center',
-        margin: '15px auto',
-        width: '80%',
-      }}>NewsBreeze is a comprehensive and user-friendly news application that keeps you updated with the latest news from around the world. With a sleek design and intuitive interface, NewsBreeze provides a seamless news consumption experience for users of all ages.</p>
+     
 
       <Searchbar value={searchValue} setValue={setSearchValue} onClick={() => {
         searchFunction(searchValue, setTopHeadlines, setError, setLoading);
