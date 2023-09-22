@@ -1,5 +1,5 @@
 # NewsBreeze - Your Ultimate News Application
-
+![Wallpaper Website](https://i.ibb.co/XJrPtHP/newbrezze.png)
 NewsBreeze is a comprehensive and user-friendly news application that keeps you updated with the latest news from around the world. With a sleek design and intuitive interface, NewsBreeze provides a seamless news consumption experience for users of all ages.
 
 ## Features
